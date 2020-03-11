@@ -1,5 +1,6 @@
 # '.vs/' é uma pasta oculta
 .vs/
+.vscode/
 
 # 'packages/' é uma pasta comum
 packages/

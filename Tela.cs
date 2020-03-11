@@ -1,5 +1,6 @@
 ﻿using System;
 using tabuleiro;
+
 namespace xadrez_console
 {
     class Tela
@@ -10,13 +11,13 @@ namespace xadrez_console
             {
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (tab.peca(i, j) == null)
+                    if (tab.peca(i, j) == null)//Se o campo do array for null, quer dizer que não tem nenhuma peça então imprime um traço.
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        Console.WriteLine(tab.peca(i, j) + " ");
+                        Console.Write(tab.peca(i, j) + " ");
                     }
                 }
                 Console.WriteLine();
