@@ -10,15 +10,8 @@ namespace xadrez_console
         {
             try
             {
-            Tabuleiro tab = new Tabuleiro(8, 8);
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 5));
-            tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 3));
-
-            tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(2, 5));
-            tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(4, 3));
-
-                Tela.imprimirTabuleiro(tab);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+                Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
