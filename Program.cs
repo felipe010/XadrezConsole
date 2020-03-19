@@ -16,6 +16,9 @@ namespace xadrez_console
                 {
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.tab);
+                    Console.WriteLine();
+                    Console.WriteLine("Turno " + partida.Turno);
+                    Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
 
                     Console.WriteLine();
                     Console.WriteLine("Letra + Número");
@@ -38,7 +41,7 @@ namespace xadrez_console
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     
-                    partida.ExecutaMovimento(origem, destino);
+                    partida.RealizaJogada(origem, destino);
 
                 }
 
