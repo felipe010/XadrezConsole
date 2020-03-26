@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 
 namespace xadrez
@@ -10,12 +11,17 @@ namespace xadrez
         public Cor JogadorAtual { get; private set; }
         public bool terminada { get; private set; }
 
+        private HashSet<Peca> pecas;
+        private HashSet<Peca> capturadas;
+
         public PartidaDeXadrez()
         {
             Tab = new Tabuleiro(8, 8);
             Turno = 1;
             JogadorAtual = Cor.Branca;
             terminada = false;
+            pecas = new HashSet<Peca>();
+            capturadas = new HashSet<Peca>();
             ColocarPecas();
         }
         public void ExecutaMovimento(Posicao origem, Posicao destino)
@@ -24,6 +30,10 @@ namespace xadrez
             p.IncrementarQteMovimentos();
             Peca pecaCapturada = Tab.RetirarPeca(destino);
             Tab.ColocarPeca(p, destino);
+            if (pecaCapturada != null)
+            {
+                capturadas.Add(pecaCapturada);
+            }
         }
         public void RealizaJogada(Posicao origem, Posicao destino)
         {
