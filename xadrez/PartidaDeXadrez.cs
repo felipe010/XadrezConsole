@@ -47,7 +47,9 @@ namespace xadrez
             if (PecaCapturada != null)
             {
                 Tab.ColocarPeca(PecaCapturada, Destino);
+                capturadas.Remove(PecaCapturada);
             }
+            Tab.ColocarPeca(p, origem);
         }
         public void RealizaJogada(Posicao origem, Posicao destino)
         {
