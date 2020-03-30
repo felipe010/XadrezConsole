@@ -20,12 +20,7 @@ namespace xadrez
         private bool Livre(Posicao pos)
         {
             return Tab.Peca(pos) == null;
-        }
-        private bool PodeMover(Posicao pos) //deletar isso
-        {
-            Peca p = Tab.Peca(pos);
-            return p == null || p.Cor != this.Cor;
-        }
+        }        
         public override bool[,] MovimentosPossiveis()
         {
             bool[,] mat = new bool[Tab.linhas, Tab.colunas];
